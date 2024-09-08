@@ -1,7 +1,7 @@
 "use client";
 import { TableProps } from "antd";
 import { MdOutlineErrorOutline } from "react-icons/md";
-import UserDetails from "./UserDetails";
+import UserDetails from "../../shared/UserDetails";
 import { useState } from "react";
 import DataTable from "@/utils/DataTable";
 

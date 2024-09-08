@@ -1,4 +1,3 @@
-"use client"
 import SubAminContainer from "@/components/(adminDashboard)/sub-amin/SubAminContainer";
 
 

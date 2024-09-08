@@ -19,7 +19,7 @@ const UserDetails = ({ open, setOpen }: TPropsType) => {
     >
         <div className="w-12 h-12 bg-mainColor  absolute top-0 right-0 rounded-xl rounded-tr-none"></div>
       <div className="pb-20">
-        <h4 className="text-center text-lg" >User  Details</h4>
+        <h4 className="text-center text-2xl font-medium" >User  Details</h4>
         <div className="mt-10">
             <div className="flex justify-between">
                 <h4>Date :</h4>

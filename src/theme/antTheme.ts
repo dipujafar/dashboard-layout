@@ -26,6 +26,10 @@ const antTheme = {
     Modal: {
       colorIcon: "rgba(255,255,255,0.45)",
     },
+    Button: {
+      defaultBg: "rgb(255,0,0)",
+      defaultColor: "rgba(255,255,255,0.88)",
+    },
   },
 };
 
