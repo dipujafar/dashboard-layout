@@ -1,0 +1,68 @@
+"use client";
+import { Avatar, Badge, Button, Divider, Dropdown, Flex, Space } from "antd";
+import { FaBars } from "react-icons/fa6";
+import { IoNotificationsOutline } from "react-icons/io5";
+import avatarImg from "@/assets/image/profile.png";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+type TNavbarProps = {
+  collapsed: boolean;
+  setCollapsed: (collapsed: boolean) => void;
+};
+
+const Navbar = ({ collapsed, setCollapsed }: TNavbarProps) => {
+  const pathName = usePathname();
+
+  return (
+    <div className="flex items-center justify-between w-[97%] font-poppins">
+      {/* Header left side */}
+      <Flex align="center" gap={52}>
+        <button
+          onClick={() => setCollapsed(collapsed ? false : true)}
+          className="cursor-pointer hover:bg-gray-300 rounded-full"
+        >
+          <FaBars size={28} />
+        </button>
+        <div className="">
+          <h2 className="text-2xl  font-medium">
+            Welcome,James
+          </h2>
+          {/* <p>Have a nice day!</p> */}
+        </div>
+      </Flex>
+
+      {/* Header right side */}
+      <Flex align="center" gap={16}>
+        {/* Notification */}
+        
+          <div className="flex justify-center items-center size-12 bg-[#E6F0FF] rounded-full cursor-pointer relative">
+           
+              <IoNotificationsOutline size={24} color="#CD0335" />
+           
+            <Badge count={1} style={{ border: "none", boxShadow: "none", backgroundColor: "#FFF", color:"#CD0335", position:"absolute", top: "-16px", right: "-8px"}}> </Badge>
+          </div>
+        
+
+        <Link href={"/profile"} className="flex items-center">
+          <Button
+            style={{
+              border: "none",
+              boxShadow: "none",
+              backgroundColor: "transparent",
+            }}
+          >
+            <Avatar src={avatarImg.src} size={48}></Avatar>
+            <div className="text-white">
+              <p className="text-lg font-semibold">James</p>
+              <p>Admin</p>
+            </div>
+          </Button>
+        </Link>
+      </Flex>
+    </div>
+  );
+};
+
+export default Navbar;

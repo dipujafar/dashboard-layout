@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Forget Password",
 };
 
-const verifyEmail = () => {
+const ResetPassword = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-mainColor ">
       <div className="flex justify-center items-center w-[441px]   mx-auto border-2  md:px-12 px-11 py-10 rounded-[40px] bg-[#FFF9FA] ">
@@ -39,4 +39,4 @@ const verifyEmail = () => {
   );
 };
 
-export default verifyEmail;
+export default ResetPassword;
