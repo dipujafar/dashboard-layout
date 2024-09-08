@@ -15,7 +15,16 @@ const antTheme = {
     },
     Menu: {
       itemSelectedColor: "rgb(205,3,53)",
-      // itemSelectedBg: "rgb(253,253,253)",
+      itemSelectedBg: "rgb(253,253,253)",
+    },
+    Table: {
+      headerBg: "rgb(205,3,53)",
+      headerColor: "rgba(255,255,255,0.88)",
+      colorBgContainer: "rgb(248,217,225)",
+      headerSplitColor: "rgb(205,3,53)",
+    },
+    Modal: {
+      colorIcon: "rgba(255,255,255,0.45)",
     },
   },
 };

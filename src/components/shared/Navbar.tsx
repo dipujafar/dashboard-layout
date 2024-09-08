@@ -13,7 +13,6 @@ type TNavbarProps = {
 };
 
 const Navbar = ({ collapsed, setCollapsed }: TNavbarProps) => {
-  const pathName = usePathname();
 
   return (
     <div className="flex items-center justify-between w-[97%] font-poppins">
@@ -25,11 +24,11 @@ const Navbar = ({ collapsed, setCollapsed }: TNavbarProps) => {
         >
           <FaBars size={28} />
         </button>
-        <div className="">
+        <div className="flex flex-col ">
           <h2 className="text-2xl  font-medium">
-            Welcome,James
+            Welcome, James
+          <span className="block  text-sm font-normal">Have a nice day!</span>
           </h2>
-          {/* <p>Have a nice day!</p> */}
         </div>
       </Flex>
 

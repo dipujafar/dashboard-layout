@@ -21,16 +21,40 @@ body {
 }
 
 .ant-menu-title-content {
-color: white !important;
+font-size: 18px;
+color: #ffffff;
+padding-left: 10px;
 
 }
+
+
+
+.ant-menu-item > svg {
+  color: #ffffff !important;
+}
+
 
 .sidebar-menu{
   background-color: #CD0335 !important;
 }
+
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+
+.ant-menu-item-selected{
+  color: red !important;
+}
+.ant-menu-item-selected >span > a {
+  color: red !important;
+  font-size: 18px;
+}
+
+.ant-menu-item-selected > svg {
+  color: #CD0335 !important;
+} 

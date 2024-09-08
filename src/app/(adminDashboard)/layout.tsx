@@ -1,13 +1,7 @@
 "use client"
 
 import { ReactNode, useState } from 'react';
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
+
 import { Button, Layout, Menu, theme } from 'antd';
 import SidebarContainer from '@/components/(adminDashboard)/layout/SidebarContainer';
 import HeaderContainer from '@/components/(adminDashboard)/layout/HeaderContainer';
@@ -27,11 +21,12 @@ const AdminLayout = ({children}: {children: ReactNode}) => {
        <HeaderContainer collapsed={collapsed} setCollapsed={setCollapsed}></HeaderContainer>
         <Content
           style={{
-            margin: '24px 16px',
-            padding: 24,
+            padding: 27,
             minHeight: 280,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
+            height: "80vh",
+            overflow: "auto"
           }}
         >
           {children}

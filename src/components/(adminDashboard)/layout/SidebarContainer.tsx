@@ -38,11 +38,10 @@ const SidebarContainer = ({ collapsed }: { collapsed: boolean }) => {
           <Link href={"/"}>
             <Image src={logo} alt="logo_Image" />
           </Link>
-          <h1 className=" text-xl  font-extrabold text-white">YUMQUICK</h1>
+          <h1 className={`${collapsed ? "text-sm":"text-xl"}   font-extrabold text-white`}>YUMQUICK</h1>
         </div>
         <Menu
-        //   theme="light"
-        //   defaultSelectedKeys={["dashboard"]}
+          defaultSelectedKeys={["dashboard"]}
           mode="inline"
           className="sidebar-menu text-lg bg-mainColor"
           items={navLinks}
