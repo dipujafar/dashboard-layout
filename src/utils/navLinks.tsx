@@ -14,11 +14,16 @@ export const navLinks = [
       icon: <GoPeople size={18} />,
       label: <Link href={"/sub-admin"}>Sub Admin</Link>
     },
+
+    {
+      key: "restaurantsMarket",
+      icon: <GoPeople size={18} />,
+      label: <Link href={"/restaurants-market"}>Restaurants & Market</Link>,
+    },
     {
       key: "vendors",
       icon: <GoPeople size={18} />,
       label: <Link href={"/vendors"}>Vendors</Link>,
     },
-  
   ];
   
