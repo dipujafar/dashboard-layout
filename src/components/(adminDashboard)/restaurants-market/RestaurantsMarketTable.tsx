@@ -162,7 +162,7 @@ const data: TDataType[] = [
 
 ];
 
-const RRestaurantsMarketTable = () => {
+const RestaurantsMarketTable = () => {
   const [open, setOpen] = useState(false);
 
   const columns: TableProps<TDataType>["columns"] = [
@@ -208,4 +208,4 @@ const RRestaurantsMarketTable = () => {
   );
 };
 
-export default RRestaurantsMarketTable;
+export default RestaurantsMarketTable;

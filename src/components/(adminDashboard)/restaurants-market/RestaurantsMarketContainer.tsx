@@ -2,7 +2,7 @@
 import { AutoComplete, AutoCompleteProps } from "antd";
 import { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
-import RRestaurantsMarketTable from "./RestaurantsMarketTable";
+import RestaurantsMarketTable from "./RestaurantsMarketTable";
 
 const mockVal = (str: string, repeat = 1) => ({
   value: str.repeat(repeat),
@@ -11,9 +11,6 @@ const mockVal = (str: string, repeat = 1) => ({
 const RestaurantsMarketContainer = () => {
   const [value, setValue] = useState("");
   const [options, setOptions] = useState<AutoCompleteProps["options"]>([]);
-  const [anotherOptions, setAnotherOptions] = useState<
-    AutoCompleteProps["options"]
-  >([]);
 
   const getPanelValue = (searchText: string) =>
     !searchText
@@ -25,8 +22,9 @@ const RestaurantsMarketContainer = () => {
   };
 
   const onChange = (data: string) => {
-    setValue(data);
+    setValue(data);   
   };
+
   return (
     <div>
       <div className="mb-6 flex justify-between items-center">
@@ -40,6 +38,7 @@ const RestaurantsMarketContainer = () => {
             size="large"
             onSelect={onSelect}
             onSearch={(text) => setOptions(getPanelValue(text))}
+            onChange={onChange}
             placeholder="Search"
           />
           <div className="absolute top-3 right-5">
@@ -49,7 +48,7 @@ const RestaurantsMarketContainer = () => {
       </div>
 
       {/* Restaurants & Market Table */}
-      <RRestaurantsMarketTable></RRestaurantsMarketTable>
+      <RestaurantsMarketTable></RestaurantsMarketTable>
     </div>
   );
 };

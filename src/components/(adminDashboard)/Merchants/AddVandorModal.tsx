@@ -16,7 +16,7 @@ const handleSubmit: FormProps<FieldType>["onFinish"] = (values) => {
   console.log("Success:", values);
 };
 
-const AddSubAdmin = ({ open, setOpen }: TPropsType) => {
+const AddVandorModal = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
   return (
     <ConfigProvider
@@ -44,7 +44,7 @@ const AddSubAdmin = ({ open, setOpen }: TPropsType) => {
         <div>
           <div className="w-12 h-12 bg-mainColor  absolute top-0 right-0 rounded-xl rounded-tr-none"></div>
           <div className="pb-10">
-            <h4 className="text-center text-2xl font-medium">Add Sub Admin</h4>
+            <h4 className="text-center text-2xl font-medium">Add Vendor</h4>
           </div>
 
           <Form
@@ -99,4 +99,4 @@ const AddSubAdmin = ({ open, setOpen }: TPropsType) => {
   );
 };
 
-export default AddSubAdmin;
+export default AddVandorModal;

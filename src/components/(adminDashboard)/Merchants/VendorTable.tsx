@@ -4,7 +4,7 @@ import { MdOutlineErrorOutline } from "react-icons/md";
 import { useState } from "react";
 import DataTable from "@/utils/DataTable";
 import { CgUnblock } from "react-icons/cg";
-import UserDetails from "@/components/shared/UserDetails";
+import VendorDetailsModal from "./VendorDetailsModal";
 
 type TDataType = {
   key?: number;
@@ -34,7 +34,7 @@ const cancelBlock: PopconfirmProps['onCancel'] = (e) => {
 };
 
 
-const SubAdminTable = () => {
+const VendorTable = () => {
   const [open, setOpen] = useState(false);
 
   const columns: TableProps<TDataType>["columns"] = [
@@ -44,7 +44,7 @@ const SubAdminTable = () => {
       render: (value) => value,
     },
     {
-      title: "Sub Admin Name",
+      title: "Vendor Name",
       dataIndex: "name",
     },
     {
@@ -74,7 +74,6 @@ const SubAdminTable = () => {
             title="Block the subadmin"
             description="Are you sure to block this subadmin?"
             onConfirm={confirmBlock}
-            onCancel={cancelBlock}
             okText="Yes"
             cancelText="No"
           >
@@ -88,9 +87,9 @@ const SubAdminTable = () => {
   return (
     <div>
       <DataTable columns={columns} data={data} pageSize={15}></DataTable>
-      <UserDetails open={open} setOpen={setOpen}></UserDetails>
+      <VendorDetailsModal open={open} setOpen={setOpen}></VendorDetailsModal>
     </div>
   );
 };
 
-export default SubAdminTable;
+export default VendorTable;
