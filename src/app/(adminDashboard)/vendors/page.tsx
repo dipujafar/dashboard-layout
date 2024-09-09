@@ -1,4 +1,4 @@
-import VendorContainer from "@/components/(adminDashboard)/Merchants/vendorContainer";
+import VendorContainer from "@/components/(adminDashboard)/Merchants/VendorContainer";
 
 
 const VendorsPage = () => {

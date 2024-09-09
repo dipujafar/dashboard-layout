@@ -31,7 +31,7 @@ const VendorContainer = () => {
   return (
     <div>
       <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-[#333] text-[40px] font-medium">Vendors</h1>
+        <h1 className="text-[#333] text-4xl font-medium">Vendors</h1>
         <div className="flex gap-6">
           <button
             onClick={() => setOpen(!open)}
@@ -40,7 +40,7 @@ const VendorContainer = () => {
             Add Vendor
           </button>
 
-          <div className="relative">
+          <div className="relative border border-mainColor rounded-lg">
             <AutoComplete
               options={options}
               style={{ width: 330 }}

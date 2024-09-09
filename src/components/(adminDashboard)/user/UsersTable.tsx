@@ -10,20 +10,20 @@ type TDataType = {
   serial: string;
   name: string;
   email: string;
+  phone: string;
   date: string;
-  type: string;
 };
 const data: TDataType[] = Array.from({ length: 18 }).map((data, inx) => ({
   key: inx,
   serial: "12345678",
   name: "James Tracy",
   email: "james1234@gmail.comm",
-  type: "User",
+  phone: "12345678",
   date: "11 Oct, 2024",
 }));
 
 
-const LatestUser = () => {
+const UsersTable = () => {
   const [open, setOpen] = useState(false);
 
   const columns: TableProps<TDataType>["columns"] = [
@@ -32,7 +32,7 @@ const LatestUser = () => {
       dataIndex: "serial",
     },
     {
-      title: "Full Name",
+      title: "User Name",
       dataIndex: "name",
     },
     {
@@ -41,8 +41,8 @@ const LatestUser = () => {
     },
 
     {
-      title: "Type",
-      dataIndex: "type",
+      title: "Phone number",
+      dataIndex: "phone",
     },
     {
       title: "Join Date",
@@ -65,10 +65,10 @@ const LatestUser = () => {
 
   return (
     <div>
-      <DataTable columns={columns} data={data} pageSize={10}></DataTable>
+      <DataTable columns={columns} data={data} pageSize={15}></DataTable>
       <UserDetails open={open} setOpen={setOpen}></UserDetails>
     </div>
   );
 };
 
-export default LatestUser;
+export default UsersTable;

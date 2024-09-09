@@ -1,6 +1,8 @@
 import { RiDashboardHorizontalFill } from "react-icons/ri";
 import { GoPeople } from "react-icons/go";
-import Image from "next/image";
+import { IoPeopleCircle } from "react-icons/io5";
+import { GrRestaurant } from "react-icons/gr";
+import { TbAlignBoxLeftMiddle } from "react-icons/tb";
 import Link from "next/link";
 
 export const navLinks = [
@@ -11,24 +13,29 @@ export const navLinks = [
     },
     {
       key: "subAdmin",
-      icon: <GoPeople size={18} />,
+      icon: <IoPeopleCircle  size={18} />,
       label: <Link href={"/sub-admin"}>Sub Admin</Link>
     },
 
     {
       key: "restaurantsMarket",
-      icon: <GoPeople size={18} />,
+      icon: <GrRestaurant size={18} />,
       label: <Link href={"/restaurants-market"}>Restaurants & Market</Link>,
     },
     {
       key: "advertisement",
-      icon: <GoPeople size={18} />,
+      icon: <TbAlignBoxLeftMiddle  size={18} />,
       label: <Link href={"/advertisement"}>Advertisement</Link>,
     },
     {
       key: "vendors",
       icon: <GoPeople size={18} />,
       label: <Link href={"/vendors"}>Vendors</Link>,
+    },
+    {
+      key: "users",
+      icon: <GoPeople size={18} />,
+      label: <Link href={"/user"}>Users</Link>,
     },
   ];
   
