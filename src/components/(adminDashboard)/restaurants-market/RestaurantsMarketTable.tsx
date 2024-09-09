@@ -3,7 +3,7 @@ import { TableProps } from "antd";
 import { MdOutlineErrorOutline } from "react-icons/md";
 import { useState } from "react";
 import DataTable from "@/utils/DataTable";
-import UserDetails from "@/components/shared/UserDetails";
+import RestaurantsMarketModal from "./RestaurantsMarketModal";
 
 type TDataType = {
     key: number
@@ -203,7 +203,7 @@ const RRestaurantsMarketTable = () => {
   return (
     <div>
       <DataTable columns={columns} data={data} pageSize={15}></DataTable>
-      <UserDetails open={open} setOpen={setOpen}></UserDetails>
+      <RestaurantsMarketModal open={open} setOpen={setOpen}></RestaurantsMarketModal>
     </div>
   );
 };

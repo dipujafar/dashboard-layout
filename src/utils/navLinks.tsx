@@ -25,5 +25,10 @@ export const navLinks = [
       icon: <GoPeople size={18} />,
       label: <Link href={"/vendors"}>Vendors</Link>,
     },
+    {
+      key: "advertisement",
+      icon: <GoPeople size={18} />,
+      label: <Link href={"/advertisement"}>Advertisement</Link>,
+    },
   ];
   

@@ -16,10 +16,6 @@ const handleSubmit: FormProps<FieldType>["onFinish"] = (values) => {
   console.log("Success:", values);
 };
 
-const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
-
 const AddSubAdmin = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
   return (
