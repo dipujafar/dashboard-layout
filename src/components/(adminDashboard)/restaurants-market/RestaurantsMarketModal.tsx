@@ -39,32 +39,14 @@ const menuItems: TMenuItems = [
   },
 ];
 
-type FieldType = {
-  username?: string;
-  password?: string;
-  remember?: string;
-};
-
-const handleSubmit: FormProps<FieldType>["onFinish"] = (values) => {
+//@ts-ignore
+const handleSubmit= (values) => {
   console.log("Success:", values);
 };
 
 const RestaurantsMarketModal = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
   return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Input: {
-            colorBorder: "rgb(184,124,174)",
-          },
-          Form: {
-            labelRequiredMarkColor: "rgb(255,255,255)",
-            labelFontSize: 18,
-          },
-        },
-      }}
-    >
       <Modal
         open={open}
         footer={null}
@@ -118,7 +100,7 @@ const RestaurantsMarketModal = ({ open, setOpen }: TPropsType) => {
                 rules={[{ required: true}]}
                 style={{
                   textAlign: "center",
-                  border: "2px dashed #D9D9D9",
+                  border: "2px dashed #B87CAE",
                   paddingBlock: "20px",
                   borderRadius: "10px",
                 }}
@@ -131,7 +113,7 @@ const RestaurantsMarketModal = ({ open, setOpen }: TPropsType) => {
                   <Button icon={<UploadOutlined />}>Upload Menu Image</Button>
                 </Upload>
               </Form.Item>
-              {/*  input  email */}
+              {/*  input  menu name */}
               <Form.Item
                 label="Menu Name"
                 name="menuName"
@@ -140,7 +122,7 @@ const RestaurantsMarketModal = ({ open, setOpen }: TPropsType) => {
                 <Input size="large" placeholder="Enter menu name "></Input>
               </Form.Item>
 
-              {/* input  phone number  */}
+              {/* input  Item Name  */}
               <Form.Item
                 label="Item Name"
                 name="itemName"
@@ -159,7 +141,6 @@ const RestaurantsMarketModal = ({ open, setOpen }: TPropsType) => {
           </div>
         </div>
       </Modal>
-    </ConfigProvider>
   );
 };
 
