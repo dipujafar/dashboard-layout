@@ -5,7 +5,6 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import avatarImg from "@/assets/image/profile.png";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 type TNavbarProps = {
   collapsed: boolean;
@@ -35,6 +34,7 @@ const Navbar = ({ collapsed, setCollapsed }: TNavbarProps) => {
       {/* Header right side */}
       <Flex align="center" gap={16}>
         {/* Notification */}
+        <Link href={"/notifications"}>
         
           <div className="flex justify-center items-center size-12 bg-[#E6F0FF] rounded-full cursor-pointer relative">
            
@@ -42,6 +42,7 @@ const Navbar = ({ collapsed, setCollapsed }: TNavbarProps) => {
            
             <Badge count={1} style={{ border: "none", boxShadow: "none", backgroundColor: "#FFF", color:"#CD0335", position:"absolute", top: "-16px", right: "-8px"}}> </Badge>
           </div>
+          </Link>
         
 
         <Link href={"/profile"} className="flex items-center">
