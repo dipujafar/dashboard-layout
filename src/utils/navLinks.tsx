@@ -3,6 +3,7 @@ import { GoPeople } from "react-icons/go";
 import { IoPeopleCircle } from "react-icons/io5";
 import { GrRestaurant } from "react-icons/gr";
 import { TbAlignBoxLeftMiddle } from "react-icons/tb";
+import { LuMessageSquarePlus } from "react-icons/lu";
 import Link from "next/link";
 
 export const navLinks = [
@@ -36,6 +37,11 @@ export const navLinks = [
       key: "users",
       icon: <GoPeople size={18} />,
       label: <Link href={"/user"}>Users</Link>,
+    },
+    {
+      key: "passwordResetRequest",
+      icon: <LuMessageSquarePlus size={18} />,
+      label: <Link href={"/resetPasswordRequest"}>Password Reset Request</Link>,
     },
   ];
   

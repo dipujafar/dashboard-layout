@@ -28,9 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
-      </head>
+      {/* <head>
+        <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
+      </head> */}
       <body
         className={`${poppins.className}  antialiased`}
       >

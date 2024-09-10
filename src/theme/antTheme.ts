@@ -1,4 +1,3 @@
-import { theme } from "antd";
 
 const antTheme = {
   token: {

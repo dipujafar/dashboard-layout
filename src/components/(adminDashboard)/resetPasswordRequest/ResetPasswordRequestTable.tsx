@@ -1,33 +1,33 @@
 "use client";
 import { TableProps } from "antd";
-import { MdOutlineErrorOutline } from "react-icons/md";
-import { useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 import DataTable from "@/utils/DataTable";
-import RestaurantsMarketModal from "./RestaurantsMarketModal";
 
 type TDataType = {
   key: number;
   name: string;
   email: string;
   phone?: string;
-  address?: string;
-  category: string;
+  newEmail?: string;
 };
 const data: TDataType[] = Array.from({ length: 24 }).map((data, inx) => ({
   key: inx + 1,
   name: "James Tracy",
   email: "james1234@gmail.comm",
   phone: "12345678",
-  address: "New York,USA",
+  newEmail: "james1234@gmail.com",
   category: "Restaurant",
 }));
 
-const RestaurantsMarketTable = () => {
-  const [open, setOpen] = useState(false);
+const ResetPasswordRequestTable = () => {
 
   const columns: TableProps<TDataType>["columns"] = [
     {
-      title: "Name",
+      title: "#SI",
+      dataIndex: "key",
+    },
+    {
+      title: "Vendor Name",
       dataIndex: "name",
     },
     {
@@ -40,22 +40,19 @@ const RestaurantsMarketTable = () => {
     },
 
     {
-      title: "Address",
-      dataIndex: "address",
+      title: "New Password Email",
+      dataIndex: "newEmail",
     },
     {
-      title: "Category",
-      dataIndex: "category",
-    },
-    {
-      title: "Menu/Item",
-      dataIndex: "menu/item",
+      title: "Action",
+      dataIndex: "action",
       render: () => (
-        <MdOutlineErrorOutline
-          size={20}
-          color="#CD0335"
-          onClick={() => setOpen(!open)}
-        />
+        <button
+        className="px-4 py-1 bg-gradient-to-r from-[#CD0335] to-[#E53B5D] hover:from-[#c29cb8] hover:to-[#c2445d] rounded-full text-white font-bold flex items-center gap-1"
+      >
+        <FaCheckCircle />
+        Send Password
+      </button>
       ),
     },
   ];
@@ -63,12 +60,8 @@ const RestaurantsMarketTable = () => {
   return (
     <div>
       <DataTable columns={columns} data={data} pageSize={15}></DataTable>
-      <RestaurantsMarketModal
-        open={open}
-        setOpen={setOpen}
-      ></RestaurantsMarketModal>
     </div>
   );
 };
 
-export default RestaurantsMarketTable;
+export default ResetPasswordRequestTable;
