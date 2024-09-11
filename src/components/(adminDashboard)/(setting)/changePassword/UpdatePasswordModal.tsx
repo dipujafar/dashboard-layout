@@ -1,6 +1,5 @@
 import { Button, Form, Input, Modal, Space } from "antd";
 import { RiCloseLargeLine } from "react-icons/ri";
-import VerifyEmailModal from "./VerifyEmailModal";
 import { useState } from "react";
 
 type TPropsType = {
@@ -8,15 +7,13 @@ type TPropsType = {
   setOpen: (collapsed: boolean) => void;
 };
 
-const ForgetPasswordModal = ({ open, setOpen }: TPropsType) => {
+const UpdatePasswordModal = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
-  const [openModal, setOpenModal] = useState(false)
 
   // @ts-ignore
   const handleSubmit = (values) => {
     console.log("Success:", values);
     setOpen(false);
-    setOpenModal(true)
   };
   return (
     <>
@@ -45,10 +42,10 @@ const ForgetPasswordModal = ({ open, setOpen }: TPropsType) => {
           {/* header */}
           <div>
             <h4 className=" text-2xl font-medium text-center">
-              Forgot Password
+            Update Password
             </h4>
             <p className="mt-1 text-center">
-              Please enter your email address to reset your password.
+            Please enter your new password
             </p>
           </div>
 
@@ -62,24 +59,39 @@ const ForgetPasswordModal = ({ open, setOpen }: TPropsType) => {
               marginTop: "25px",
             }}
           >
-            {/*  input  email */}
+            {/*  input  new Password*/}
             <Form.Item
-              label="Email"
-              name="email"
-              rules={[{ type: "email", required: true }]}
+              label="New password"
+              name="newPassword"
+              rules={[
+                { required: true, message: "Please Enter New  Password" },
+              ]}
             >
-              <Input size="large" placeholder="Enter Your Email "></Input>
+              <Input.Password size="large" placeholder="Set new password" />
+            </Form.Item>
+
+            {/* input  confirm number  */}
+            <Form.Item
+              label="Re-enter new password"
+              name="confirmPassword"
+              rules={[
+                { required: true, message: "Please Re-enter new password" },
+              ]}
+            >
+              <Input.Password
+                size="large"
+                placeholder="Re-enter new password"
+              />
             </Form.Item>
 
             <Button htmlType="submit" size="large" block>
-              Send OTP
+              Update Password
             </Button>
           </Form>
         </div>
       </Modal>
-      <VerifyEmailModal open={openModal} setOpen={setOpenModal}></VerifyEmailModal>
     </>
   );
 };
 
-export default ForgetPasswordModal;
+export default UpdatePasswordModal;

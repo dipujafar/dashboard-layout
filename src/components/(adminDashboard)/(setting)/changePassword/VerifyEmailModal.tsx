@@ -1,6 +1,6 @@
 import { Button, Form, Input, Modal, Space } from "antd";
 import { RiCloseLargeLine } from "react-icons/ri";
-import VerifyEmailModal from "./VerifyEmailModal";
+import UpdatePasswordModal from "./UpdatePasswordModal";
 import { useState } from "react";
 
 type TPropsType = {
@@ -8,9 +8,9 @@ type TPropsType = {
   setOpen: (collapsed: boolean) => void;
 };
 
-const ForgetPasswordModal = ({ open, setOpen }: TPropsType) => {
+const VerifyEmailModal = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   // @ts-ignore
   const handleSubmit = (values) => {
@@ -44,11 +44,9 @@ const ForgetPasswordModal = ({ open, setOpen }: TPropsType) => {
 
           {/* header */}
           <div>
-            <h4 className=" text-2xl font-medium text-center">
-              Forgot Password
-            </h4>
+            <h4 className=" text-2xl font-medium text-center">Verify Email</h4>
             <p className="mt-1 text-center">
-              Please enter your email address to reset your password.
+              Please enter the OTP we have sent you in your email.{" "}
             </p>
           </div>
 
@@ -58,28 +56,37 @@ const ForgetPasswordModal = ({ open, setOpen }: TPropsType) => {
             onFinish={handleSubmit}
             layout="vertical"
             style={{
-              maxWidth: 500,
               marginTop: "25px",
             }}
           >
             {/*  input  email */}
             <Form.Item
-              label="Email"
-              name="email"
-              rules={[{ type: "email", required: true }]}
+              name="OTP"
+              rules={[{ required: true }]}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
-              <Input size="large" placeholder="Enter Your Email "></Input>
+              <Input.OTP size="large" />
             </Form.Item>
 
+            <div className="mb-5 flex justify-between px-12">
+              <p>Didn’t receive the code?</p>
+              <p className="text-mainColor font-medium cursor-pointer">
+                Resend
+              </p>
+            </div>
+
             <Button htmlType="submit" size="large" block>
-              Send OTP
+              Send OPT
             </Button>
           </Form>
         </div>
       </Modal>
-      <VerifyEmailModal open={openModal} setOpen={setOpenModal}></VerifyEmailModal>
+      <UpdatePasswordModal open={openModal} setOpen={setOpenModal}></UpdatePasswordModal>
     </>
   );
 };
 
-export default ForgetPasswordModal;
+export default VerifyEmailModal;

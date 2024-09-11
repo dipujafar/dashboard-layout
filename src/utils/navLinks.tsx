@@ -5,6 +5,7 @@ import { GrRestaurant } from "react-icons/gr";
 import { TbAlignBoxLeftMiddle } from "react-icons/tb";
 import { LuMessageSquarePlus } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
+import { RiLogoutCircleLine } from "react-icons/ri";
 import Link from "next/link";
 
 export const navLinks = [
@@ -49,5 +50,11 @@ export const navLinks = [
       icon: <IoSettingsOutline  size={18} />,
       label: <Link href={"/settings"}>Settings</Link>,
     },
+    {
+      key: "logOut",
+      icon: <RiLogoutCircleLine  size={18} />,
+      label: <Link href={"/login"}>Logout</Link>,
+    },
+    
   ];
   

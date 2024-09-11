@@ -45,7 +45,7 @@ const Navbar = ({ collapsed, setCollapsed }: TNavbarProps) => {
           </Link>
         
 
-        <Link href={"/profile"} className="flex items-center">
+        <Link href={"/personalInformation"} className="flex items-center">
           <Button
             style={{
               border: "none",
