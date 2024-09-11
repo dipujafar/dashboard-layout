@@ -4,6 +4,7 @@ import { IoPeopleCircle } from "react-icons/io5";
 import { GrRestaurant } from "react-icons/gr";
 import { TbAlignBoxLeftMiddle } from "react-icons/tb";
 import { LuMessageSquarePlus } from "react-icons/lu";
+import { IoSettingsOutline } from "react-icons/io5";
 import Link from "next/link";
 
 export const navLinks = [
@@ -42,6 +43,11 @@ export const navLinks = [
       key: "passwordResetRequest",
       icon: <LuMessageSquarePlus size={18} />,
       label: <Link href={"/resetPasswordRequest"}>Password Reset Request</Link>,
+    },
+    {
+      key: "settings",
+      icon: <IoSettingsOutline  size={18} />,
+      label: <Link href={"/settings"}>Settings</Link>,
     },
   ];
   

@@ -4,6 +4,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
 import antTheme from "@/theme/antTheme";
 import {Poppins} from "next/font/google"
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
       >
        <AntdRegistry>
         <ConfigProvider theme={antTheme}>
+        <Toaster />
         {children}
         </ConfigProvider>
         </AntdRegistry>
