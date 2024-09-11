@@ -22,7 +22,8 @@ const RestaurantsMarketContainer = () => {
   };
 
   const onChange = (data: string) => {
-    setValue(data);   
+    setValue(data);  
+    console.log(value); 
   };
 
   return (

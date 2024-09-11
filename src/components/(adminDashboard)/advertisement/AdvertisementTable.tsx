@@ -1,9 +1,9 @@
 "use client";
-import { message, Popconfirm, PopconfirmProps, TableProps } from "antd";
+import { TableProps } from "antd";
 import { MdOutlineErrorOutline } from "react-icons/md";
 import { useState } from "react";
 import DataTable from "@/utils/DataTable";
-import UserDetails from "@/components/shared/UserDetails";
+
 import Image, { StaticImageData } from "next/image";
 import bannerImage from "@/assets/image/bannerImage.png"
 import UploadAdvertiseModal from "./UploadAdvertiseModal";
@@ -25,18 +25,6 @@ const data: TDataType[] = Array.from({length: 50}).map(() => {
 })
   
 
-
-
-
-const confirmBlock: PopconfirmProps['onConfirm'] = (e) => {
-  console.log(e);
-  message.success('Blocked the subadmin');
-};
-
-const cancelBlock: PopconfirmProps['onCancel'] = (e) => {
-  console.log(e);
-  message.error('Click on No');
-};
 
 
 const AdvertisementTable = () => {

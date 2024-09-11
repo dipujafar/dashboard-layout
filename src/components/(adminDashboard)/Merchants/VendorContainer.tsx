@@ -1,5 +1,5 @@
 "use client";
-import { AutoComplete, AutoCompleteProps, Button } from "antd";
+import { AutoComplete, AutoCompleteProps} from "antd";
 import { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 import VendorTable from "./VendorTable";
@@ -26,6 +26,7 @@ const VendorContainer = () => {
 
   const onChange = (data: string) => {
     setValue(data);
+    console.log(value);
   };
 
   return (

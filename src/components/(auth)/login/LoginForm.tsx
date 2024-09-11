@@ -1,6 +1,6 @@
 "use client";
 import type { FormProps } from "antd";
-import { Button, Checkbox, Form, Input, Flex, ConfigProvider } from "antd";
+import { Button, Checkbox, Form, Input, Flex} from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -19,7 +19,7 @@ const LoginForm = () => {
 
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
     console.log("Success:", values);
-    // route.push("/dashboard");
+    route.push("/dashboard");
   };
 
   return (

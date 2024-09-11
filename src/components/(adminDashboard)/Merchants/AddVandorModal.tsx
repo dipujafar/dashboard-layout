@@ -6,7 +6,8 @@ type TPropsType = {
   setOpen: (collapsed: boolean) => void;
 };
 
-// @ts-ignore
+
+// @ts-expect-error: Ignoring TypeScript error due to inferred 'any' type for 'values' which is handled in the form submit logic
 const handleSubmit = (values) => {
   console.log("Success:", values);
 };

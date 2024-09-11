@@ -23,6 +23,7 @@ const UserContainer = () => {
 
   const onChange = (data: string) => {
     setValue(data);
+    console.log(value);
   };
 
   return (

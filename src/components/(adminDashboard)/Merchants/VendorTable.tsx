@@ -28,11 +28,6 @@ const confirmBlock: PopconfirmProps['onConfirm'] = (e) => {
   message.success('Blocked the subadmin');
 };
 
-const cancelBlock: PopconfirmProps['onCancel'] = (e) => {
-  console.log(e);
-  message.error('Click on No');
-};
-
 
 const VendorTable = () => {
   const [open, setOpen] = useState(false);

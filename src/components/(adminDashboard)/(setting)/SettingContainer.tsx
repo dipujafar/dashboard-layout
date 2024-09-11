@@ -31,17 +31,17 @@ const SettingContainer = () => {
     const [open, setOpen] = useState(false)
   return (
     <div className="grid grid-cols-1 gap-5">
-      {links?.map((link) => {
+      {links?.map((link,inx) => {
         if (link.path === "changePassword") {
           return (
-            <div onClick={()=>setOpen(!open)} className="bg-[#F8D9E1] p-5 rounded flex justify-between items-center cursor-pointer">
+            <div key={inx} onClick={()=>setOpen(!open)} className="bg-[#F8D9E1] p-5 rounded flex justify-between items-center cursor-pointer">
               <h4 className="text-black font-medium text-lg">{link?.lable}</h4>
               <IoIosArrowForward size={18} color="black" />
             </div>
           );
         } else {
           return (
-            <Link href={`/${link.path}`}>
+            <Link key={link.path} href={`/${link.path}`}>
               <div className="bg-[#F8D9E1] p-5 rounded flex justify-between items-center">
                 <h4 className="text-black font-medium text-lg">
                   {link?.lable}

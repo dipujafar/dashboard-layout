@@ -1,12 +1,11 @@
 "use client";
 
 import { ReactNode, useState } from "react";
-
-import { Button, ConfigProvider, Layout, Menu, theme } from "antd";
+import {  ConfigProvider, Layout, theme } from "antd";
 import SidebarContainer from "@/components/(adminDashboard)/layout/SidebarContainer";
 import HeaderContainer from "@/components/(adminDashboard)/layout/HeaderContainer";
 
-const { Header, Sider, Content } = Layout;
+const { Content } = Layout;
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {
   const [collapsed, setCollapsed] = useState(false);

@@ -1,4 +1,4 @@
-import { Button, Form, Input, Modal, Space } from "antd";
+import { Button, Form, Input, Modal} from "antd";
 import { RiCloseLargeLine } from "react-icons/ri";
 import ForgetPasswordModal from "./ForgetPasswordModal";
 import { useState } from "react";
@@ -12,7 +12,7 @@ const ChangePasswordModal = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
   const [openModal, setOpenModal] = useState(false);
 
-  // @ts-ignore
+  // @ts-expect-error: Ignoring TypeScript error due to inferred 'any' type for 'values' which is handled in the form submit logic
   const handleSubmit = (values) => {
     console.log("Success:", values);
     setOpen(false);
