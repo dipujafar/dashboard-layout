@@ -1,9 +1,10 @@
 "use client";
-import { TableProps } from "antd";
+import { message, Popconfirm, PopconfirmProps, TableProps } from "antd";
 import { MdOutlineErrorOutline } from "react-icons/md";
 import UserDetails from "../../shared/UserDetails";
 import { useState } from "react";
 import DataTable from "@/utils/DataTable";
+import { CgUnblock } from "react-icons/cg";
 
 type TDataType = {
   key?: number;
@@ -22,6 +23,11 @@ const data: TDataType[] = Array.from({ length: 18 }).map((data, inx) => ({
   date: "11 Oct, 2024",
 }));
 
+
+const confirmBlock: PopconfirmProps['onConfirm'] = (e) => {
+  console.log(e);
+  message.success('Blocked the subadmin');
+};
 
 const UsersTable = () => {
   const [open, setOpen] = useState(false);
@@ -52,13 +58,22 @@ const UsersTable = () => {
       title: "Action",
       dataIndex: "action",
       render: () => (
-        <div>
-          <MdOutlineErrorOutline
-            size={20}
-            color="#CD0335"
-            onClick={() => setOpen(!open)}
-          />
-        </div>
+        <div className="flex gap-1 ">
+        <MdOutlineErrorOutline
+          size={20}
+          color="#CD0335"
+          onClick={() => setOpen(!open)}
+        />
+        <Popconfirm
+          title="Block the user"
+          description="Are you sure to block this user?"
+          onConfirm={confirmBlock}
+          okText="Yes"
+          cancelText="No"
+        >
+          <CgUnblock size={20} color="#009A22" />
+        </Popconfirm>
+      </div>
       ),
     },
   ];
