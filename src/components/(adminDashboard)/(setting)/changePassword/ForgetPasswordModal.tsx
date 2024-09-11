@@ -6,13 +6,14 @@ type TPropsType = {
   setOpen: (collapsed: boolean) => void;
 };
 
-// @ts-ignore
-const handleSubmit = (values) => {
-  console.log("Success:", values);
-};
-
-const AddVandorModal = ({ open, setOpen }: TPropsType) => {
+const ForgetPasswordModal = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
+
+  // @ts-ignore
+  const handleSubmit = (values) => {
+    console.log("Success:", values);
+    setOpen(false);
+  };
   return (
     <Modal
       open={open}
@@ -24,7 +25,7 @@ const AddVandorModal = ({ open, setOpen }: TPropsType) => {
         minWidth: "max-content",
       }}
     >
-      <div>
+      <div className="py-14">
         <div
           className="w-12 h-12 bg-mainColor  absolute top-0 right-0 rounded-bl-3xl cursor-pointer"
           onClick={() => setOpen(false)}
@@ -35,9 +36,16 @@ const AddVandorModal = ({ open, setOpen }: TPropsType) => {
             className="absolute top-1/3 left-1/3"
           />
         </div>
-        <div className="pb-10">
-          <h4 className="text-center text-2xl font-medium">Add Vendor</h4>
+
+        {/* header */}
+        <div>
+          <h4 className=" text-2xl font-medium text-center">Forgot Password</h4>
+          <p className="mt-1 text-center">
+            Please enter your email address to reset your password.
+          </p>
         </div>
+
+        {/* form */}
         <Form
           form={form}
           onFinish={handleSubmit}
@@ -47,38 +55,17 @@ const AddVandorModal = ({ open, setOpen }: TPropsType) => {
             marginTop: "25px",
           }}
         >
-          {/*  input  name */}
-          <Form.Item
-            label="Full Name"
-            name="name"
-            rules={[{ required: true, message: "Please enter full name" }]}
-          >
-            <Input size="large" placeholder="Enter full name "></Input>
-          </Form.Item>
-
           {/*  input  email */}
           <Form.Item
             label="Email"
             name="email"
             rules={[{ type: "email", required: true }]}
           >
-            <Input size="large" placeholder="Enter email "></Input>
-          </Form.Item>
-
-          {/* input  phone number  */}
-          <Form.Item
-            label="Phone Number"
-            name="phone"
-            rules={[{ required: true, message: "Please enter Phone Number" }]}
-          >
-            <Space.Compact size="large" block>
-              <Input style={{ width: "20%" }} />
-              <Input style={{ width: "80%" }} />
-            </Space.Compact>
+            <Input size="large" placeholder="Enter Your Email "></Input>
           </Form.Item>
 
           <Button htmlType="submit" size="large" block>
-            Add
+            Send OPT
           </Button>
         </Form>
       </div>
@@ -86,4 +73,4 @@ const AddVandorModal = ({ open, setOpen }: TPropsType) => {
   );
 };
 
-export default AddVandorModal;
+export default ForgetPasswordModal;
