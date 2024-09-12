@@ -1,4 +1,5 @@
-import { Button, Form, Input, Modal} from "antd";
+import { Button, Form, Input, Modal, Radio, RadioChangeEvent } from "antd";
+import { useState } from "react";
 import { RiCloseLargeLine } from "react-icons/ri";
 
 type TPropsType = {
@@ -12,7 +13,13 @@ const handleSubmit = (values) => {
 };
 
 const AddVandorModal = ({ open, setOpen }: TPropsType) => {
+  const [instituteType, setinstituteType] = useState("restaurant");
   const [form] = Form.useForm();
+
+  const hadleInstituteType = (e: RadioChangeEvent) => {
+    console.log("radio checked", e.target.value);
+    setinstituteType(e.target.value);
+  };
   return (
     <Modal
       open={open}
@@ -74,6 +81,30 @@ const AddVandorModal = ({ open, setOpen }: TPropsType) => {
             <Input size="large" placeholder="Enter phone number "></Input>
           </Form.Item>
 
+          <Form.Item label="Category" name="category">
+            {/* input institutetion type */}
+            <Radio.Group
+              onChange={hadleInstituteType}
+              defaultValue={instituteType}
+            >
+              <Radio value={"restaurant"}>Restuarant</Radio>
+              <Radio value={"Market"}>
+                Market...
+              </Radio>
+              {instituteType === "Market" ? (
+                 <div className="ml-[118px] mt-2">
+                    <Radio.Group
+                      style={{ display: "flex", flexDirection: "column" }}
+                    >
+                      <Radio value={"Auto"}>Auto</Radio>
+                      <Radio value={"Supershop"}>Supershop</Radio>
+                      <Radio value={"RealEstate"}>Real Estate</Radio>
+                    </Radio.Group>
+                    </div>
+                 
+                ) : null}
+            </Radio.Group>
+          </Form.Item>
           <Button htmlType="submit" size="large" block>
             Add
           </Button>
