@@ -33,7 +33,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
       </head> */}
       <body
-        className={`${poppins.className}  antialiased`}
+        className={poppins.className}
       >
        <AntdRegistry>
         <ConfigProvider theme={antTheme}>

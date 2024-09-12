@@ -1,11 +1,10 @@
-import { Button, Form, Input, Modal, Space } from "antd";
+import { Button, Form, Input, Modal} from "antd";
 import { RiCloseLargeLine } from "react-icons/ri";
 
 type TPropsType = {
   open: boolean;
   setOpen: (collapsed: boolean) => void;
 };
-
 
 // @ts-expect-error: Ignoring TypeScript error due to inferred 'any' type for 'values' which is handled in the form submit logic
 const handleSubmit = (values) => {
@@ -70,12 +69,9 @@ const AddVandorModal = ({ open, setOpen }: TPropsType) => {
           <Form.Item
             label="Phone Number"
             name="phone"
-            rules={[{ required: true, message: "Please enter Phone Number" }]}
+            rules={[{ required: true, message: "Please enter phone number" }]}
           >
-            <Space.Compact size="large" block>
-              <Input style={{ width: "20%" }} />
-              <Input style={{ width: "80%" }} />
-            </Space.Compact>
+            <Input size="large" placeholder="Enter phone number "></Input>
           </Form.Item>
 
           <Button htmlType="submit" size="large" block>

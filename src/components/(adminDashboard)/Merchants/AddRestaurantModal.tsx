@@ -1,4 +1,13 @@
-import { Button, Form, Input, Modal, Radio, RadioChangeEvent, TimePicker, Upload } from "antd";
+import {
+  Button,
+  Form,
+  Input,
+  Modal,
+  Radio,
+  RadioChangeEvent,
+  TimePicker,
+  Upload,
+} from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { RiCloseLargeLine } from "react-icons/ri";
 import TextArea from "antd/es/input/TextArea";
@@ -9,7 +18,6 @@ type TPropsType = {
   open: boolean;
   setOpen: (collapsed: boolean) => void;
 };
-
 
 const AddRestaurantModal = ({ open, setOpen }: TPropsType) => {
   const [form] = Form.useForm();
@@ -26,17 +34,13 @@ const AddRestaurantModal = ({ open, setOpen }: TPropsType) => {
     console.log(closeTime);
   };
 
-  
-// @ts-expect-error: Ignoring TypeScript error due to inferred 'any' type for 'values' which is handled in the form submit logic
+  // @ts-expect-error: Ignoring TypeScript error due to inferred 'any' type for 'values' which is handled in the form submit logic
   const handleSubmit = (values) => {
     console.log("Success:", values);
   };
-  
 
-  
-
-  const hadleHomeDelivery= (e: RadioChangeEvent) => {
-    console.log('radio checked', e.target.value);
+  const hadleHomeDelivery = (e: RadioChangeEvent) => {
+    console.log("radio checked", e.target.value);
     setHomeDelivey(e.target.value);
   };
 
@@ -111,7 +115,7 @@ const AddRestaurantModal = ({ open, setOpen }: TPropsType) => {
               {/* input  what's number  */}
               <Form.Item
                 label="Whatsapp Number"
-                name="phone"
+                name="phoneWhatsapp"
                 rules={[
                   { required: true, message: "Please enter what's number" },
                 ]}
@@ -163,17 +167,19 @@ const AddRestaurantModal = ({ open, setOpen }: TPropsType) => {
             </div>
 
             <div className="flex-1">
-
-                 {/*  input delivery*/}
+              {/*  input delivery*/}
               <Form.Item
                 label="Do You have home delivery?"
                 style={{ width: "100%" }}
               >
-                    {/* input institutetion type */}
-            <Radio.Group onChange={hadleHomeDelivery} defaultValue={homeDelivey}>
-              <Radio value={"yes"}>Yes</Radio>
-              <Radio value={"no"}>No</Radio>
-            </Radio.Group>
+                {/* input institutetion type */}
+                <Radio.Group
+                  onChange={hadleHomeDelivery}
+                  defaultValue={homeDelivey}
+                >
+                  <Radio value={"yes"}>Yes</Radio>
+                  <Radio value={"no"}>No</Radio>
+                </Radio.Group>
               </Form.Item>
 
               {/* image upload  */}

@@ -1,5 +1,5 @@
 import type { FormProps } from "antd";
-import { Button,  ConfigProvider, Form, Input, Modal, Space } from "antd";
+import { Button,  ConfigProvider, Form, Input, Modal} from "antd";
 import { RiCloseLargeLine } from "react-icons/ri";
 
 type TPropsType = {
@@ -83,18 +83,14 @@ const AddSubAdmin = ({ open, setOpen }: TPropsType) => {
 
             {/* input  phone number  */}
             <Form.Item
-              label="Phone Number"
-              name="phone"
-              rules={[
-                { required: true, message: "Please enter Phone Number" },
-               
-              ]}
-            >
-              <Space.Compact size="large" block>
-                <Input style={{ width: "20%" }}  />
-                <Input style={{ width: "80%" }} />
-              </Space.Compact>
-            </Form.Item>
+                label="Phone Number"
+                name="phone"
+                rules={[
+                  { required: true, message: "Please enter phone number" },
+                ]}
+              >
+                <Input size="large" placeholder="Enter phone number "></Input>
+              </Form.Item>
 
             <Button htmlType="submit" size="large" block>
               Add
